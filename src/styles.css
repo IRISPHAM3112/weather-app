@@ -1,5 +1,5 @@
 body {
-  background-color: rgba(127, 255, 212, 0.555);
+  background-color: #04293a;
 }
 .app {
   background-color: antiquewhite;
@@ -8,6 +8,7 @@ body {
   box-sizing: border-box;
   border-style: none;
   border-radius: 10px;
+  color: rgb(4, 28, 50);
 }
 .container {
   display: block;
@@ -25,11 +26,17 @@ body {
   padding-left: 20px;
 }
 h1 {
-  color: blue;
+  font-family: "Rock 3D", cursive;
+}
+.humidity {
+  color: #781d42;
+}
+.wind {
+  color: #781d42;
 }
 .icon {
-  color: #212121;
-  font-weight: 400;
+  padding-top: 20px;
+  color: rgb(4, 28, 50);
   padding-left: 90px;
   font-weight: 700;
   font-size: 60px;
@@ -37,13 +44,24 @@ h1 {
 }
 .unit {
   position: relative;
-  font-size: 20px;
+  font-weight: 400;
+  font-size: 15px;
   bottom: 25px;
 }
 .WeatherForecast {
   text-align: center;
 }
+.highest-temperature {
+  color: #781d42;
+}
+.lowest-temperature {
+  color: #704355;
+}
 .project {
   padding-top: 20px;
   text-align: center;
+  font-size: small;
+}
+.word {
+  color: #781d42;
 }
