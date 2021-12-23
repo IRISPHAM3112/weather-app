@@ -1,0 +1,49 @@
+body {
+  background-color: rgba(127, 255, 212, 0.555);
+}
+.app {
+  background-color: antiquewhite;
+  max-width: 800px;
+  margin: 60px auto;
+  box-sizing: border-box;
+  border-style: none;
+  border-radius: 10px;
+}
+.container {
+  display: block;
+  max-width: 720px;
+  padding: 20px;
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: left;
+}
+.WeatherInfo {
+  padding-top: 20px;
+}
+.cityInfo {
+  padding-left: 20px;
+}
+h1 {
+  color: blue;
+}
+.icon {
+  color: #212121;
+  font-weight: 400;
+  padding-left: 90px;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 1;
+}
+.unit {
+  position: relative;
+  font-size: 20px;
+  bottom: 25px;
+}
+.WeatherForecast {
+  text-align: center;
+}
+.project {
+  padding-top: 20px;
+  text-align: center;
+}
