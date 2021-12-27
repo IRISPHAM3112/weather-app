@@ -15,7 +15,7 @@ function formatDate (timestamp) {
 
 
 function displayTemperature(response) {
-    console.log(response.data);
+    celTemp = response.data.main.temp;
     let temperatureElement = document.querySelector("#temperature");
     let cityElement = document.querySelector("#city");
     let descriptionElement = document.querySelector("#description")
@@ -23,14 +23,16 @@ function displayTemperature(response) {
     let windElement = document.querySelector("#wind")
     let dateElement = document.querySelector("#date")
     let iconElement = document.querySelector("#icon")
-    temperatureElement.innerHTML = Math.round(response.data.main.temp);
+    celTemp = response.data.main.temp;
+    temperatureElement.innerHTML = Math.round(celTemp);
     cityElement.innerHTML = response.data.name;
     descriptionElement.innerHTML = response.data.weather.description;  
     humidityElement.innerHTML = response.data.main.humidity;
     windElement.innerHTML = Math.round(response.data.wind.speed);
     dateElement.innerHTML = formatDate(response.data.dt * 1000);
     iconElement.setAttribute("src",`https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
-
+    iconElement.setAttribute("alt", response.data.weather[0].description);
+    getForecast(response.data.coord);
 }
 
 function search(city) {
@@ -42,7 +44,29 @@ function search(city) {
 function handleSubmit(event) {
     event.preventDefault();
     let cityInputElement = document.querySelector("#city-input");
-    search(cityInputElement.value); 
-};
+    search(cityInputElement.value)
+}
 let form = document.querySelector("#search-form");
-form.addEventlistener("submit",handleSubmit); 
+form.addEventListener("submit", handleSubmit);
+
+function displayFahTemp(event) {
+    event.preventDefault();
+    let fahTemperature = (celTemp * 9)/5 + 32; 
+    celTemperature.classList.remove("active");
+    fahTemperature.classList.add("active");
+    let temperatureElement = document.querySelector("#temperature");
+    temperatureElement.innerHTML = Math.round(fahTemperature);
+};
+function displayCelTemp(event) {
+    event.preventDefault();
+    celTemperature.classList.add("active");
+    fahTemperature.classList.remove("active");
+    let temperatureElement = document.querySelector("#temperature");
+    temperatureElement.innerHTML = Math.round(celTemp);
+};
+let fahTemperature= document.querySelector("#Fdegree")
+fahTemperature.addEventListener("click", displayFahTemp)
+let celTemperature= document.querySelector("#Cdegree")
+celTemperature.addEventListener("click", displayCelTemp)
+let celTemp = null;
+search("Ha noi");

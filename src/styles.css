@@ -28,8 +28,13 @@ body {
 h1 {
   font-family: "Rock 3D", cursive;
 }
-.description {
-  text-transform: capitalize;
+
+.icon .active {
+  color: rgb(4, 28, 50);
+  cursor: default;
+}
+.unit .active:hover {
+  text-decoration: none;
 }
 .humidity {
   color: #781d42;
