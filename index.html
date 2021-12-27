@@ -9,6 +9,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Rock+3D&display=swap" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Week 7</title>
     <link rel="stylesheet" href="src/styles.css"/>
 </head>
@@ -30,18 +31,18 @@
     <div class ="row"> 
       <div class ="col-6">
         <div class="cityInfo">
-        <h1>
+        <h1 id ="city">
           Ha Noi
         </h1> 
-        Thursday 18:39, clear sky
+        <span id ="date">Thursday 18:39</span>, <span id ="description">clear sky</span>
         <div>
-          Humidity: <span class="humidity"> 57% </span>, Wind: <span class="wind">0.89km/h</span>
+          Humidity: <span id="humidity"> 57% </span>, Wind: <span id="wind">0.89km/h</span>
         </div>
       </div>
       </div>
       <div class="col-6">
         <div class ="icon">
-          <span> 🔆 20</span>
+           🔆 <span id ="temperature">20</span>
           <span class ="unit"> °C </span>
         </div>
     </div>

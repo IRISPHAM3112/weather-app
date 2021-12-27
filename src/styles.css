@@ -28,6 +28,9 @@ body {
 h1 {
   font-family: "Rock 3D", cursive;
 }
+.description {
+  text-transform: capitalize;
+}
 .humidity {
   color: #781d42;
 }
