@@ -33,7 +33,16 @@ function displayTemperature(response) {
 
 }
 
-let apiKey ="bdf4089b0994f94adcf10ec4fb943bff";
-let city = "Ha Noi"
-let apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
-axios.get(apiUrl).then(displayTemperature);
+function search(city) {
+    let apiKey ="bdf4089b0994f94adcf10ec4fb943bff";
+    let apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
+    axios.get(apiUrl).then(displayTemperature);
+
+};
+function handleSubmit(event) {
+    event.preventDefault();
+    let cityInputElement = document.querySelector("#city-input");
+    search(cityInputElement.value); 
+};
+let form = document.querySelector("#search-form");
+form.addEventlistener("submit",handleSubmit); 
