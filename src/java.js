@@ -48,15 +48,14 @@ function handleSubmit(event) {
 }
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
-
 function displayFahTemp(event) {
-    event.preventDefault();
-    let fahTemperature = (celTemp * 9)/5 + 32; 
-    celTemperature.classList.remove("active");
-    fahTemperature.classList.add("active");
-    let temperatureElement = document.querySelector("#temperature");
-    temperatureElement.innerHTML = Math.round(fahTemperature);
-};
+  event.preventDefault();
+  let temperature = (celTemp * 9) / 5 + 32;
+  celTemperature.classList.remove("active");
+  fahTemperature.classList.add("active");
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(temperature);
+}
 function displayCelTemp(event) {
     event.preventDefault();
     celTemperature.classList.add("active");
